@@ -3,8 +3,12 @@
 var express = require("express")
 // config dependencies using in server
 const app = express()
+
+//config port
 app.use(express.static("public"))
 var port = process.env.PORT || 4000;
+
+
 //load post router 
 postRouter = require('./route/router')
 app.use(postRouter)
