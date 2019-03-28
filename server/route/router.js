@@ -16,8 +16,8 @@ postRouter.route('/').get(function(req,res){// firstly we get everything into ho
             }
     })
 })
-// postRouter.route('/newpost').post(function(req,res){}) // route for create a new post
-// postRouter.route('/checkpost').get(function(req,res){})// route for expert can check and publish new post
+postRouter.route('/newpost').post(function(req,res){}) // route for create a new post
+postRouter.route('/checkpost').get(function(req,res){})// route for expert can check and publish new post
 
 
 module.exports = postRouter // export router to use in server
