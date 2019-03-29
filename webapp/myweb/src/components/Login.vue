@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <v-dialog >
         <v-blind slot="activator" >
@@ -12,7 +13,6 @@
         <div class="log-cloud cloud2"></div>
         <div class="log-cloud cloud3"></div>
         <div class="log-cloud cloud4"></div>
-
         <div class="log-logo">Welcome!</div>
         <div class="log-text">@TechBk</div>
     </div>
@@ -49,24 +49,8 @@ export default {
   	},
 
   	toLogin(){
-
-  		let password_sha = hex_sha1(hex_sha1( this.password ));
-
-  		let loginParam = {
-  			account: this.account,
-  			password_sha
-  		}
-
-      this.isLoging = true;
-      
-  		setTimeout(()=>{
-        
-        let expireDays = 1000 * 60 * 60 * 24 * 15;
-  			this.setCookie('session','blablablablabla...', expireDays);
-        this.isLoging = false;
-       
-  			this.$router.push('/user_info/');
-  		},3000)
+        console.log('worked')
+  		
   	}
   }
 }

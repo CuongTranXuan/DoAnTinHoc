@@ -24,22 +24,32 @@
           </v-btn>
  
       </v-toolbar>
+      {{user}}
   </nav>
 </template>
 
 <script>
 import Login from './Login'
 import Signup from './Signup'
-
+import getApi from '../../Api/GetAPI.js'
 export default {
   components :{ Login,Signup},
   data(){
     return{
       links: [
         {icon:'Search',route:'/Search'}
-      ]
+      ],
+      user: []
+    }
+  },
+  mounted(){
+    this.getUser()
+  },
+  methods: {
+    async getUser(){
+      const response = await getApi.fetchGet()
+      this.user = response.data
     }
   }
-    
 }
 </script>

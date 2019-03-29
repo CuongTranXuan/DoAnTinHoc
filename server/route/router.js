@@ -5,7 +5,7 @@ var sql = require("mysql")
 var con = sql.createConnection(dbCredential);// connect to database
 // homepage route
 
-postRouter.route('/').get(function(req,res){// firstly we get everything into homepage
+postRouter.route('/get').get(function(req,res){// firstly we get everything into homepage
     con.connect(function(err){
         if (err) console.log(err) 
             else {

@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 import Admin from './components/Admin.vue'
 import Homepage from './components/Homepage.vue'
 
@@ -11,11 +10,6 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/Home',
-      name: 'home',
-      component: Home
-    },
-    {
       path: '/Admin',
       name: 'Admin',
       component: Admin
@@ -24,6 +18,10 @@ export default new Router({
       path: '/Homepage',
       name: 'homepage',
       component: Homepage
+    },
+    {
+      path: '/', // tu dong chuyen nguoi dung vao trang chu
+      redirect: '/Homepage'
     }
   ]
 })
