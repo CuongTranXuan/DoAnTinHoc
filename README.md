@@ -1,11 +1,14 @@
 This is a project for Class 'Đồ án tin học: thiết kế xây dựng phần mềm' - semester 20182
 
-Team: Team5 
-Class: PFIEV - 61 
-Members: 
- Trần Xuân Cường - 20160589
- Đoàn Ngọc Duy   - 
- Trần Đăng Đôn	 - 
+# Team: Team5 
+
+#Class: PFIEV - 61 
+
+#Members: 
+
+Trần Xuân Cường - 20160589
+Đoàn Ngọc Duy   - 
+Trần Đăng Đôn	- 
 
 # Vue Forum
 
