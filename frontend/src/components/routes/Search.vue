@@ -65,8 +65,6 @@
 	import UserDisplay from '../UserDisplay'
 	import UserPlaceholder from '../UserPlaceholder'
 	import ThreadDisplay from '../ThreadDisplay'
-	// import ThreadDisplayPlaceholder from '../ThreadDisplayPlaceholder'
-
 	import AjaxErrorHandler from '../../assets/js/errorHandler'
 	import logger from '../../assets/js/logger'
 
@@ -76,7 +74,6 @@
 			UserDisplay,
 			UserPlaceholder,
 			ThreadDisplay,
-			// ThreadDisplayPlaceholder
 		},
 		data () {
 			return {

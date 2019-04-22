@@ -31,8 +31,6 @@
 <script>
 	import ScrollLoad from '../ScrollLoad'
 	import ThreadDisplay from '../ThreadDisplay'
-	// import ThreadDisplayPlaceholder from '../ThreadDisplayPlaceholder'
-
 	import AjaxErrorHandler from '../../assets/js/errorHandler'
 	import logger from '../../assets/js/logger'
 
@@ -41,7 +39,6 @@
 		props: ['username'],
 		components: {
 			ThreadDisplay,
-			// ThreadDisplayPlaceholder,
 			ScrollLoad
 		},
 		data () {
