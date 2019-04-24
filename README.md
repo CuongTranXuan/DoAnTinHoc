@@ -28,10 +28,7 @@ Simple forum - using Express, Vue, and Sequelize.
 * Multiple admin users 	//TODO
 * Moderation built in, including:
   * Locking or deleteing threads and posts
-  * Blocking user IP address
-  * Suspending users from creating posts or starting threads
 
-## Screenshots
 
 ## Install
 
