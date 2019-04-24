@@ -31,25 +31,10 @@
 				>
 					I
 				</div>
-				<div
-					class='input_editor_core__format_button'
-					title='Link (ctrl + l)'
-					@click='setModalState("link", true)'
-				>
-					<span class='fa fa-link'></span>
-				</div>
-				<div
-					class='input_editor_core__format_button'
-					style='margin-left: 0.25rem;'
-					title='Code (ctrl + k)'
-					@click='formatCode'
-				>
-					<span class='fa fa-code'></span>
-				</div>
 			</div>
 			<textarea
 				class='input_editor_core__input'
-				placeholder='Type here - you can format using Markdown'
+				placeholder='Type here'
 
 				ref='textarea'
 				:value='value'
@@ -60,8 +45,6 @@
 				
 				@keydown.ctrl.66.prevent='replaceSelectedText("__", "__")'
 				@keydown.ctrl.73.prevent='replaceSelectedText("*", "*")'
-				@keydown.ctrl.76.prevent='setModalState("link", true)'
-				@keydown.ctrl.75.prevent='formatCode'
 			>
 			</textarea>
 		</div>
@@ -217,25 +200,6 @@
 
 				el.focus();
 			},
-			addLink () {
-				var linkTextLength = this.linkText.length;
-				var selectionData = this.getSelectionData();
-				var el = this.$refs.textarea;
-
-				this.setEditor(
-					this.value.slice(0, selectionData.start) +
-					'[' + this.linkText + '](' + this.linkURL + ')' +
-					this.value.slice(selectionData.end)
-				);
-				el.focus();
-
-				setTimeout(function() {
-					el.selectionStart = selectionData.start + 1;
-					el.selectionEnd = selectionData.start + 1 + linkTextLength;
-				}, 0);
-
-				this.setModalState('link', false);
-			},
 			addEmoji (emoji) {
 				var selectionData = this.getSelectionData();
 				var el = this.$refs.textarea;
@@ -251,31 +215,6 @@
 					el.selectionStart = selectionData.start + emoji.length;
 					el.selectionEnd = selectionData.start + emoji.length;
 				}, 0);
-			},
-			formatCode (e) {
-				e.preventDefault()
-
-				var selectionData = this.getSelectionData();
-
-				if(this.value[selectionData.start-1] === '\n' || selectionData.start === 0) {
-					var el = this.$refs.textarea;
-					var matches = ( selectionData.val.match(/\n/g) || [] ).length
-					var replacedText = '    ' + selectionData.val.replace(/\n/g, '\n    ')
-
-					this.setEditor(
-						this.value.slice(0, selectionData.start) +
-						replacedText +
-						this.value.slice(selectionData.end)
-					);
-					el.focus();
-
-					setTimeout(function() {
-						el.selectionStart = selectionData.start + 4;
-						el.selectionEnd = selectionData.end + (matches + 1)*4;
-					}, 0);
-				} else {
-					this.replaceSelectedText('`', '`');
-				}
 			}
 		}
 	}

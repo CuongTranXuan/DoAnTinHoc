@@ -250,7 +250,7 @@
 		}
 
 		@at-root #{&}__input {
-			width: 50%;
+			width: 100%;
 			position: relative;
 
 			.input_editor_core__format_bar {

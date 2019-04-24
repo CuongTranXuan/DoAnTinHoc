@@ -10,9 +10,8 @@ This is a project for Class 'Đồ án tin học: thiết kế xây dựng phầ
 * Đoàn Ngọc Duy   - 
 * Trần Đăng Đôn	  - 
 
-# Vue Forum
+# Phone Wiki 
 
-Simple forum - using Express, Vue, and Sequelize.    
 [Click here](https://my-test-forum123.herokuapp.com/) for a link to the demo.
 
 ## Features
@@ -21,9 +20,6 @@ Simple forum - using Express, Vue, and Sequelize.
 * Profile pictures // TODO 
 * Infinite-scroll loading of posts and threads
 * @ mentions //TODO
-* Polls	//TODO
-* Markdown editor //TODO
-* Inline link expansions for Twitter, GitHub, Wikipedia, and more to come // TODO
 * Admin dashboard for forum analytics
 * Multiple admin users 	//TODO
 * Moderation built in, including:
@@ -34,7 +30,7 @@ Simple forum - using Express, Vue, and Sequelize.
 
 To install on Heroku:
 
- 1. `git clone https://github.com/sbkwgh/forum.git && cd forum`
+ 1. `git clone https://github.com/CuongTranXuan/DoAnTinHoc.git && cd DoAnTinHoc`
  2. `heroku login`
  3. `heroku git:remote -a <app-name>`
  4. `heroku config:set NODE_ENV=production`

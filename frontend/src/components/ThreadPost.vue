@@ -39,8 +39,6 @@
 			<button slot='footer' class='button button--modal' @click.stop='setShareModalState(false)'>OK</button>
 		</modal-window>
 
-		<report-post-modal v-model='showReportPostModal' :post-id='post.id'></report-post-modal>
-
 		<div class='post__meta_data'>
 			<div style='display: inline-flex;'>
 				<avatar-icon :user='post.User' class='post__avatar'></avatar-icon>
@@ -99,13 +97,6 @@
 			>
 				<div class='post__action post__share' @click.stop='setShareModalState(true)'>share</div>
 				<div
-					class='post__action'
-					@click.stop='setShowReportPostModal(true)'
-					v-if='$store.state.username && !post.removed'
-				>
-					report
-				</div>
-				<div
 					class='post__action post__reply'
 					v-if='$store.state.username && showReply'
 					@click.stop='$emit("reply", post.id, username)'
@@ -126,8 +117,6 @@
 	import FancyInput from './FancyInput'
 	import ReplyingTo from './ReplyingTo'
 	import AvatarIcon from './AvatarIcon'
-	import ReportPostModal from './ReportPostModal'
-
 	import AjaxErrorHandler from '../assets/js/errorHandler'
 
 	export default {
@@ -147,8 +136,7 @@
 			FancyInput,
 			ReplyingTo,
 			AvatarIcon,
-			HeartButton,
-			ReportPostModal
+			HeartButton
 		},
 		data () {
 			let post = this.post
@@ -156,7 +144,6 @@
 			return {
 				hover: false,
 				showShareModal: false,
-				showReportPostModal: false,
 				postURL: `${location.origin}/p/${post.id}`,
 				selected: false,
  
@@ -177,7 +164,7 @@
 				}
 			},
 			showActions () {
-				return this.hover || this.showShareModal || this.showReportPostModal
+				return this.hover || this.showShareModal
 			}
 		},
 		methods: {
@@ -203,9 +190,6 @@
 			},
 			setShareModalState (val) {
 				this.showShareModal = val
-			},
-			setShowReportPostModal (val) {
-				this.showReportPostModal = val
 			},
 			goToThread () {
 				this.$router.push(`/thread/${this.post.Thread.slug}/${this.post.Thread.id}`)

@@ -44,7 +44,6 @@ app.use('/api/v1/thread', require('./routes/thread'))
 app.use('/api/v1/notification', require('./routes/notification'))
 app.use('/api/v1/post', require('./routes/post'))
 app.use('/api/v1/settings', require('./routes/settings'))
-// app.use('/api/v1/report', require('./routes/report'))
 app.use('/api/v1/ban', require('./routes/ban'))
 app.use('/api/v1/search', require('./routes/search'))
 app.use('/api/v1/log', require('./routes/log'))				  // TODO
