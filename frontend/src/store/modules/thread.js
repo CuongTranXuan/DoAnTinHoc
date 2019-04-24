@@ -4,7 +4,6 @@ const state = {
 	thread: '',
 	category: null,
 	threadId: undefined,
-	PollQuestionId: null,
 	posts: [],
 	postNotification: null,
 	locked: false,
@@ -279,7 +278,6 @@ const mutations = {
 	setThread (state, obj) {
 		state.thread = obj.name
 		state.threadId = obj.id
-		state.PollQuestionId = obj.PollQuestionId
 		state.category = obj.Category
 	},
 	setNextURL (state, URL) {

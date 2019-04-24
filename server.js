@@ -47,8 +47,7 @@ app.use('/api/v1/settings', require('./routes/settings'))
 // app.use('/api/v1/report', require('./routes/report'))
 app.use('/api/v1/ban', require('./routes/ban'))
 app.use('/api/v1/search', require('./routes/search'))
-app.use('/api/v1/log', require('./routes/log'))
-app.use('/api/v1/poll', require('./routes/poll'))				  // TODO
+app.use('/api/v1/log', require('./routes/log'))				  // TODO
 app.use('/api/v1/link_preview', require('./routes/link_preview')) // TODO
 
 app.use(express.static(path.join(__dirname, 'frontend', 'dist')))

@@ -16,52 +16,7 @@
 					width='15rem'
 				></fancy-input>
 				
-				<button
-					class='thread_meta_info__add_poll button button--thin_text'
-					v-if='!showPoll'
-					@click='togglePoll(true)'
-				>Add poll</button>
 			</div>
-
-			<transition name='slide'>
-				<div class='thread_meta_info__poll' v-if='showPoll'>
-					<div class='thread_meta_info__poll__top_bar'>
-						<fancy-input
-							class='thread_meta_info__poll__question'
-							v-model='pollQuestion'
-							placeholder='Poll question'
-							width='20rem'
-							:large='true'
-							:error='errors.pollQuestion'
-						></fancy-input>
-						<button class='button button--thin_text button--borderless' @click='removePoll'>
-							Remove poll
-						</button>
-					</div>
-					<div>
-						<div class='thread_meta_info__poll__answer' v-for='(pollAnswer, $index) in pollAnswers'>
-							<fancy-input
-								v-model='pollAnswer.answer'
-								width='15rem'
-								:large='true'
-								:placeholder='"Answer " + ($index+1)'
-							></fancy-input>
-							<span @click='removePollAnswer($index)' title='Remove answer'>&times;</span>
-						</div>
-						<div class='thread_meta_info__form'>
-							<fancy-input
-								v-model='newPollAnswer'
-								placeholder='Option/answer for poll'
-								style='display: inline-block; margin-right: 0.5rem;'
-								width='15rem'
-								:large='true'
-								:error='errors.pollAnswer'
-							></fancy-input>
-							<button class='button button--thin_text' @click='addPollAnswer'>Add answer</button>
-						</div>
-					</div>
-				</div>
-			</transition>
 		</div>
 
 		<div
@@ -81,12 +36,6 @@
 					@focus='setFocusInput(true)'
 					@blur='setFocusInput(false)'
 				></input-editor-core>
-			</div>
-			<div class='editor__preview'>
-				<div class='editor__format_bar editor__format_bar--preview'>
-					preview
-				</div>
-				<input-editor-preview :value='editor' :mentions='mentions'></input-editor-preview>
 			</div>
 		</div>
 		<error-tooltip :error='errors.content' class='editor_error'></error-tooltip>
@@ -127,15 +76,8 @@
 
 				errors: {
 					content: '',
-					name: '',
-					pollQuestion: '',
-					pollAnswer: ''
-				},
-
-				showPoll: false,
-				pollQuestion: '',
-				newPollAnswer: '',
-				pollAnswers: []
+					name: ''
+				}
 			}
 		},
 		computed: {
@@ -144,30 +86,6 @@
 			}
 		},
 		methods: {
-			togglePoll (val) {
-				if(val !== undefined) {
-					this.showPoll = val
-				} else {
-					this.showPoll = !this.showPoll
-				}
-			},
-			addPollAnswer () {
-				if(!this.newPollAnswer.trim().length) return
-
-				this.pollAnswers.push({ answer: this.newPollAnswer })
-				this.newPollAnswer = ''
-			},
-			removePollAnswer ($index) {
-				this.pollAnswers.splice($index, 1)
-			},
-			removePoll () {
-				this.pollQuestion = ''
-				this.pollAnswers = []
-				this.newPollAnswer = ''
-
-				this.togglePoll()
-			},
-
 			setErrors (errors) {
 				errors.forEach(error => {
 					this.errors[error.name] = error.error
@@ -176,8 +94,6 @@
 			clearErrors () {
 				this.errors.content = ''
 				this.errors.name = ''
-				this.errors.pollQuestion = ''
-				this.errors.pollAnswer = ''
 			},
 
 			hasDuplicates (array, cb) {
@@ -196,12 +112,6 @@
 					errors.push({name: 'content', error: 'Post content cannot be blank'})
 				} if(!this.name.trim().length) {
 					errors.push({name: 'name', error: 'Cannot be blank'})
-				} if(this.showPoll && !this.pollQuestion.trim().length) {
-					errors.push({name: 'pollQuestion', error: 'Cannot be blank'})
-			 	} if (this.showPoll && this.pollAnswers.length < 2) {
-			 		errors.push({name: 'pollAnswer', error: 'You need at least 2 answers'})
-				} if (this.showPoll && this.hasDuplicates(this.pollAnswers, i => i.answer)) {
-			 		errors.push({name: 'pollAnswer', error: 'Your answers can\'t contain any duplicates'})
 				} if(errors.length) {
 					this.setErrors(errors)
 					return
@@ -223,16 +133,6 @@
 							mentions: this.mentions
 						})
 					)
-
-					if(this.showPoll) {
-						ajax.push(
-							this.axios.post('/api/v1/poll', {
-								question: this.pollQuestion,
-								answers: this.pollAnswers.map(a => a.answer),
-								threadId: res.data.id
-							})
-						)
-					}
 
 					return Promise.all(ajax)
 				}).then(res => {
@@ -306,47 +206,10 @@
 			align-items: baseline;
 		}
 
-		@at-root #{&}__add_poll {
-			margin-top: 0.5rem;
-		}
-
 		@at-root #{&}__text {
 			margin-bottom: 0.5rem;
 		}
 
-		@at-root #{&}__poll {
-			border-top: thin solid $color__gray--primary;
-			margin-top: 1rem;
-			padding-top: 0.75rem;
-			position: relative;
-
-			@at-root #{&}__top_bar {
-				display: flex;
-				justify-content: space-between;
-				align-items: baseline;
-			}
-
-			@at-root #{&}__answer {
-				display: flex;
-				align-items: baseline;
-
-				& > span {
-					opacity: 0;
-					pointer-events: none;
-					transition: all 0.1s;
-
-					font-size: 1.5rem;
-					margin-left: 0.5rem;
-					cursor: pointer;
-					@include user-select(none);
-				}
-
-				&:hover > span {
-					opacity: 1;
-					pointer-events: all;
-				}
-			}
-		}
 	}
 
 	.submit {
@@ -432,18 +295,6 @@
 				margin-top: 0.5rem;
 			}
 
-			@at-root #{&}__poll__top_bar .button {
-				position: absolute;
-				bottom: 0;
-				right: 0;
-			}
-			@at-root #{&}__poll__question {
-				width: 100%;
-
-				> div, input {
-					width: 100% !important;
-				}
-			}
 		}
 
 		.editor {
