@@ -86,7 +86,7 @@
 	import TabView from '../TabView'
 	import ScrollLoad from '../ScrollLoad'
 	import ThreadDisplay from '../ThreadDisplay'
-	import ThreadDisplayPlaceholder from '../ThreadDisplayPlaceholder'
+	// import ThreadDisplayPlaceholder from '../ThreadDisplayPlaceholder'
 	import SelectOptions from '../SelectOptions'
 	import SelectButton from '../SelectButton'
 
@@ -99,7 +99,7 @@
 			TabView,
 			ScrollLoad,
 			ThreadDisplay,
-			ThreadDisplayPlaceholder,
+			// ThreadDisplayPlaceholder,
 			SelectOptions,
 			SelectButton
 		},

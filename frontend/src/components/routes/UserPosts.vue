@@ -34,8 +34,6 @@
 <script>
 	import ScrollLoad from '../ScrollLoad'
 	import ThreadPost from '../ThreadPost'
-	import ThreadPostPlaceholder from '../ThreadPostPlaceholder'
-
 	import AjaxErrorHandler from '../../assets/js/errorHandler'
 	import logger from '../../assets/js/logger'
 
@@ -44,8 +42,7 @@
 		props: ['username'],
 		components: {
 			ThreadPost,
-			ScrollLoad,
-			ThreadPostPlaceholder
+			ScrollLoad
 		},
 		data () {
 			return {

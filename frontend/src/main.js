@@ -50,8 +50,8 @@ const SettingsAccount = () => import('./components/routes/SettingsAccount')
 
 const Admin = () => import('./components/routes/Admin')
 const AdminDashboard = () => import('./components/routes/AdminDashboard')
-const AdminModerationReports = () => import('./components/routes/AdminModerationReports')
-const AdminModerationBannedUsers = () => import('./components/routes/AdminModerationBannedUsers')
+// const AdminModerationReports = () => import('./components/routes/AdminModerationReports')
+// const AdminModerationBannedUsers = () => import('./components/routes/AdminModerationBannedUsers')
 const AdminGeneral = () => import('./components/routes/AdminGeneral')
 const AdminUsers = () => import('./components/routes/AdminUsers')
 
@@ -86,9 +86,9 @@ const router = new VueRouter({
 			{ path: 'dashboard', component: AdminDashboard },
 			{ path: 'general', component: AdminGeneral },
 			{ path: 'users', component: AdminUsers },
-			{ path: 'moderation', redirect: '/admin/moderation/reports' },
-			{ path: 'moderation/reports', component: AdminModerationReports },
-			{ path: 'moderation/bans', component: AdminModerationBannedUsers }
+			// { path: 'moderation', redirect: '/admin/moderation/reports' },
+			// { path: 'moderation/reports', component: AdminModerationReports },
+			// { path: 'moderation/bans', component: AdminModerationBannedUsers }
 		] },
 		{ path: '*', component: NotFound }
 	],

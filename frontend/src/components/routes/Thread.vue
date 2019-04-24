@@ -139,7 +139,6 @@
 	import ScrollLoad from '../ScrollLoad'
 	import ThreadPost from '../ThreadPost'
 	import ThreadPostNotification from '../ThreadPostNotification'
-	import ThreadPostPlaceholder from '../ThreadPostPlaceholder'
 	import PostScrubber from '../PostScrubber'
 	import MenuButton from '../MenuButton'
 	import LoadingButton from '../LoadingButton'
@@ -159,7 +158,6 @@
 			ScrollLoad,
 			ThreadPost,
 			ThreadPostNotification,
-			ThreadPostPlaceholder,
 			PostScrubber,
 			MenuButton,
 			LoadingButton,
