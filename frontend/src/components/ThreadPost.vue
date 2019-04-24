@@ -45,7 +45,7 @@
 			<div style='display: inline-flex;'>
 				<avatar-icon :user='post.User' class='post__avatar'></avatar-icon>
 				<div class='post__thread' v-if='showThread' @click.stop='goToThread'>
-					In thread <span class='post__thread__name'>{{post.Thread.name | truncateMid(50)}}</span>
+					In thread <span class='post__thread__name'>{{post.Thread.name}}</span>
 					&nbsp;&middot;&nbsp;
 				</div>
 				<div class='post__user' v-else>
@@ -96,13 +96,12 @@
 			<div
 				class='post__footer_group post__actions'
 				:class='{ "post__actions--show": showActions }'
-				v-if='!post.removed'
 			>
 				<div class='post__action post__share' @click.stop='setShareModalState(true)'>share</div>
 				<div
 					class='post__action'
 					@click.stop='setShowReportPostModal(true)'
-					v-if='$store.state.username'
+					v-if='$store.state.username && !post.removed'
 				>
 					report
 				</div>
@@ -373,7 +372,6 @@
 		@at-root #{&}__content {
 			padding: 0 0.5rem 0 4rem;
 			outline: none;
-			word-wrap: anywhere;
 		}
 		@at-root #{&}__footer {
 			padding: 0.5rem 0 0.75rem 0.5rem;

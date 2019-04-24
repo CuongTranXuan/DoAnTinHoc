@@ -50,8 +50,8 @@ const SettingsAccount = () => import('./components/routes/SettingsAccount')
 
 const Admin = () => import('./components/routes/Admin')
 const AdminDashboard = () => import('./components/routes/AdminDashboard')
-// const AdminModerationReports = () => import('./components/routes/AdminModerationReports')
-// const AdminModerationBannedUsers = () => import('./components/routes/AdminModerationBannedUsers')
+const AdminModerationReports = () => import('./components/routes/AdminModerationReports')
+const AdminModerationBannedUsers = () => import('./components/routes/AdminModerationBannedUsers')
 const AdminGeneral = () => import('./components/routes/AdminGeneral')
 const AdminUsers = () => import('./components/routes/AdminUsers')
 
@@ -85,10 +85,10 @@ const router = new VueRouter({
 		{ path: '/admin', redirect: '/admin/dashboard', component: Admin, children: [
 			{ path: 'dashboard', component: AdminDashboard },
 			{ path: 'general', component: AdminGeneral },
-			{ path: 'users', component: AdminUsers }
-			// { path: 'moderation', redirect: '/admin/moderation/reports' },
-			// { path: 'moderation/reports', component: AdminModerationReports },
-			// { path: 'moderation/bans', component: AdminModerationBannedUsers }
+			{ path: 'users', component: AdminUsers },
+			{ path: 'moderation', redirect: '/admin/moderation/reports' },
+			{ path: 'moderation/reports', component: AdminModerationReports },
+			{ path: 'moderation/bans', component: AdminModerationBannedUsers }
 		] },
 		{ path: '*', component: NotFound }
 	],
@@ -165,17 +165,7 @@ Vue.filter('truncate', function (value, length) {
 	if(value.length <= length) {
 		return value
 	} else {
-		return value.slice(0, length) + '…'
-	}
-});
-Vue.filter('truncateMid', function (value, length) {
-	if(value.length <= length) {
-		return value
-	} else {
-		let firstLen = Math.round(length/2);
-		let secondLen = length - firstLen;
-
-		return value.slice(0, firstLen) + '…' + value.slice(value.length-secondLen, value.length)
+		return value.slice(0, length) + '...'
 	}
 });
 
@@ -215,3 +205,16 @@ if(cookieDict.admin === 'false') {
 } else if(cookieDict.admin === 'true') {
 	Root.$store.commit('setAdmin', true)
 }
+
+// import Vue from 'vue'
+// import App from './App.vue'
+// import router from './router'
+// import store from './store'
+
+// Vue.config.productionTip = false
+
+// new Vue({
+//   router,
+//   store,
+//   render: h => h(App)
+// }).$mount('#app')

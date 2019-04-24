@@ -8,7 +8,7 @@
 
 			@click='goToUser'
 		></avatar-icon>
-		<div style='width: calc(100% - 3rem);' @click='goToThread'>
+		<div style='width: 100%;' @click='goToThread'>
 			<div class='thread_display__header'>
 				<span class='thread_display__name'>
 					{{thread.name}}
@@ -16,7 +16,7 @@
 				<div class='thread_display__meta_bar'>
 					<div>
 						By
-						<span class='thread_display__username' ref='username'>{{threadUsername | truncateMid(25)}}</span>
+						<span class='thread_display__username' ref='username'>{{threadUsername}}</span>
 						in
 						<span class='thread_display__category' ref='category'>{{thread.Category.name}}</span>
 						&middot;
@@ -119,16 +119,11 @@
 			@at-root #{&}__name {
 				font-weight: 500;
 				font-size: 1.25rem;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				line-height: 1.5rem;
-				height: 1.5rem;
 			}
 			@at-root #{&}__meta_bar {
+				display: flex;
 				color: $color--gray__darkest;
-				flex-shrink: 0;
-				line-height: 1.5rem;
-				height: 1.5rem;
+				justify-content: space-between;
 			}
 
 		@at-root #{&}__replies_bar {

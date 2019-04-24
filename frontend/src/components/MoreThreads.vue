@@ -94,14 +94,9 @@
 				&:hover { background-color: #fff; }
 			}
 		}
-		@at-root #{&}__name {
-			word-break: break-all;
-			padding-right: 0.5rem;
-		}
 		@at-root #{&}__date_created {
 			color: $color__text--secondary;
 			font-size: 1rem;
-			flex-shrink: 0;
 		}
 		@at-root #{&}__empty {
 			padding: 1rem;

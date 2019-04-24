@@ -86,8 +86,10 @@
 	import TabView from '../TabView'
 	import ScrollLoad from '../ScrollLoad'
 	import ThreadDisplay from '../ThreadDisplay'
+	import ThreadDisplayPlaceholder from '../ThreadDisplayPlaceholder'
 	import SelectOptions from '../SelectOptions'
 	import SelectButton from '../SelectButton'
+
 	import AjaxErrorHandler from '../../assets/js/errorHandler'
 	import logger from '../../assets/js/logger'
 
@@ -97,6 +99,7 @@
 			TabView,
 			ScrollLoad,
 			ThreadDisplay,
+			ThreadDisplayPlaceholder,
 			SelectOptions,
 			SelectButton
 		},

@@ -7,7 +7,7 @@
 				<thread-display v-for='thread in threads.slice(0, 3)' :key='thread.id' :thread='thread'></thread-display>
 
 				<div
-					class='search__more search__item' v-if='threads.length > ($store.state.MinQueryLength-1)'
+					class='search__more search__item' v-if='threads.length > 3'
 					@click='$router.push("/search/threads/" + $route.params.q)'
 				>
 					<span class='fa fa-fw fa-comments'></span>
@@ -65,6 +65,8 @@
 	import UserDisplay from '../UserDisplay'
 	import UserPlaceholder from '../UserPlaceholder'
 	import ThreadDisplay from '../ThreadDisplay'
+	import ThreadDisplayPlaceholder from '../ThreadDisplayPlaceholder'
+
 	import AjaxErrorHandler from '../../assets/js/errorHandler'
 	import logger from '../../assets/js/logger'
 
@@ -74,6 +76,7 @@
 			UserDisplay,
 			UserPlaceholder,
 			ThreadDisplay,
+			ThreadDisplayPlaceholder
 		},
 		data () {
 			return {
@@ -92,7 +95,7 @@
 				);
 			},
 			queryTooShort () {
-				return this.$route.params.q.length < this.$store.state.MinQueryLength
+				return this.$route.params.q.length < 4
 			}
 		},
 		methods: {

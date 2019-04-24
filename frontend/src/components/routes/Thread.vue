@@ -139,7 +139,7 @@
 	import ScrollLoad from '../ScrollLoad'
 	import ThreadPost from '../ThreadPost'
 	import ThreadPostNotification from '../ThreadPostNotification'
-	// import ThreadPostPlaceholder from '../ThreadPostPlaceholder'
+	import ThreadPostPlaceholder from '../ThreadPostPlaceholder'
 	import PostScrubber from '../PostScrubber'
 	import MenuButton from '../MenuButton'
 	import LoadingButton from '../LoadingButton'
@@ -159,7 +159,7 @@
 			ScrollLoad,
 			ThreadPost,
 			ThreadPostNotification,
-			// ThreadPostPlaceholder,
+			ThreadPostPlaceholder,
 			PostScrubber,
 			MenuButton,
 			LoadingButton,
@@ -407,10 +407,9 @@
 		justify-content: space-between;
 
 		@at-root #{&}__thread_title {
-			@include text($font--role-default, 2rem, 400);
-			width: 80%;
+			@include text($font--role-default, 3rem, 400);
+			width: calc(100% - 8rem);
 			margin-bottom: 1rem;
-			word-break: break-all;
 		}
 	}
 
@@ -485,11 +484,7 @@
 			width: 100%;
 		}
 		div.thread_side_bar {
-			padding-left: 2rem;
-
-			&> :first-child {
-				margin-left: 0;
-			}
+			padding-left: 2.25rem;
 		}
 	}
 
@@ -504,11 +499,8 @@
 			flex-direction: row;
 			align-items: flex-end;
 
-			margin-left: 1rem;
+			padding-left: 0.25rem;
 
-			& > :first-child {
-				margin-left: 0;
-			}
 			> * {
 				margin: 0 0.5rem;
 			}

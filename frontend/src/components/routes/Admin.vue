@@ -43,12 +43,12 @@
 						description: 'Admin accounts, categories and settings',
 						icon: 'fa-th'
 					},
-					// {
-					// 	title: 'Moderation',
-					// 	route: 'moderation/reports',
-					// 	description: 'View and respond to user reports',
-					// 	icon: 'fa-exclamation-circle'
-					// },
+					{
+						title: 'Moderation',
+						route: 'moderation/reports',
+						description: 'View and respond to user reports',
+						icon: 'fa-exclamation-circle'
+					},
 					{
 						title: 'Users',
 						route: 'users',
