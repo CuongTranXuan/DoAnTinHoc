@@ -9,7 +9,8 @@
     "start": "sequelize db:migrate && node server.js"
   },
   "engines": {
-    "node": ">= 7.6.0"
+    "node": "11.x",
+    "npm" : "6.x"
   },
   "author": "",
   "license": "ISC",
