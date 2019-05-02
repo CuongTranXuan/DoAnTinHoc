@@ -63,7 +63,6 @@
 
 				</div>
 				<div class='notification_button__menu__empty' v-if='!notifications.length'>
-					<span>{{emojis[emojiIndex % 6]}}</span>
 					No notifications
 				</div>
 			</div>
@@ -82,9 +81,7 @@
 				notifications: [],
 
 				showMenu: false,
-				shake: false,
-				emojis: ['😢', '🤷', '😘', '😒', '😔', '💩'],
-				emojiIndex: Math.round(Math.random()*5)
+				shake: false
 			}
 		},
 		computed: {
@@ -106,9 +103,7 @@
 				if(val) {
 					this.resetUnreadCount()
 				} else {
-					setTimeout(_ => {
-						this.emojiIndex++
-					}, 200)
+					setTimeout(200)
 				}
 			},
 			getIndexById (id) {

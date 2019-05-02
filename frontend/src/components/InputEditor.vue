@@ -17,7 +17,6 @@
 			<template slot='Editor'>
 				<input-editor-core
 					:value='value'
-					:right-align-emoji='true'
 					:error='error'
 
 					@input='emitInput'

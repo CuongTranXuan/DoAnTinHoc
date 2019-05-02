@@ -3,20 +3,7 @@
 		class='input_editor_core'
 	>
 		<div>
-			<emoji-selector
-				v-model='emojiSelectorVisible'
-				@emoji='addEmoji'
-				:right-align='rightAlignEmoji'
-			></emoji-selector>
-
 			<div class='input_editor_core__format_bar'>
-				<div
-					class='input_editor_core__format_button input_editor_core__format_button--emoji'
-					title='Emoji'
-					@click='emojiSelectorVisible = true'
-				>
-					<span class='far fa-grin'></span>
-				</div>
 				<div
 					class='input_editor_core__format_button'
 					title='Bold (ctrl + b)'
@@ -76,18 +63,16 @@
 	import FancyInput from './FancyInput'
 	import TabView from './TabView'
 	import ErrorTooltip from './ErrorTooltip'
-	import EmojiSelector from './EmojiSelector'
 
 	let usernames = {}
 
 	export default {
 		name: 'InputEditorCore',
-		props: ['value', 'error', 'right-align-emoji'],
+		props: ['value', 'error'],
 		components: {
 			ModalWindow,
 			FancyInput,
 			ErrorTooltip,
-			EmojiSelector
 		},
 		data () {
 			return {
@@ -95,7 +80,6 @@
 				linkURL: '',
 				linkModalVisible: false,
 				imageModalVisible: false,
-				emojiSelectorVisible: false
 			}
 		},
 		methods: {
@@ -199,22 +183,6 @@
 				}
 
 				el.focus();
-			},
-			addEmoji (emoji) {
-				var selectionData = this.getSelectionData();
-				var el = this.$refs.textarea;
-
-				this.setEditor(
-					this.value.slice(0, selectionData.start) +
-					emoji +
-					this.value.slice(selectionData.end)
-				);
-				el.focus();
-
-				setTimeout(function() {
-					el.selectionStart = selectionData.start + emoji.length;
-					el.selectionEnd = selectionData.start + emoji.length;
-				}, 0);
 			}
 		}
 	}
@@ -316,12 +284,6 @@
 				border-bottom: 0.3rem solid transparent;
 				border-right: 0.3rem solid #D32F2F;
 			}
-		}
-	}
-
-	@media (max-width: 420px) {
-		.input_editor_core__format_button--emoji {
-			display: none;
 		}
 	}
 </style>
