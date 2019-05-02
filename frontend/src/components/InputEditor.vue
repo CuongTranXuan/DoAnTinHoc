@@ -13,7 +13,7 @@
 		<div class='input_editor__reply_username' v-if='replyUsername'>Replying to <strong>{{replyUsername}}</strong></div>
 		<div class='input_editor__close input_editor__format_button' @click='closeEditor'>&times;</div>
 		
-		<tab-view :tabs='["Editor", "Preview"]' v-model='showTab' :small-tabs='true'>
+		<tab-view :tabs='["Editor"]' v-model='showTab' :small-tabs='true'>
 			<template slot='Editor'>
 				<input-editor-core
 					:value='value'
@@ -26,9 +26,6 @@
 					@blur='setFocusInput(false)'
 				></input-editor-core>
 			</template>
-			<template slot='Preview'>
-				<input-editor-preview :value='value' :mentions='mentions'></input-editor-preview>
-			</template>
 		</tab-view>
 		
 		
@@ -40,7 +37,6 @@
 
 <script>
 	import InputEditorCore from './InputEditorCore'
-	import InputEditorPreview from './InputEditorPreview'
 	import LoadingIcon from './LoadingIcon'
 	import TabView from './TabView'
 
@@ -50,7 +46,6 @@
 		props: ['value', 'error', 'replyUsername', 'show', 'loading'],
 		components: {
 			InputEditorCore,
-			InputEditorPreview,
 			LoadingIcon,
 			TabView
 		},

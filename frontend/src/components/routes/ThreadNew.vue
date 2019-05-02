@@ -46,7 +46,6 @@
 
 <script>
 	import InputEditorCore from '../InputEditorCore'
-	import InputEditorPreview from '../InputEditorPreview'
 	import FancyInput from '../FancyInput'
 	import SelectButton from '../SelectButton'
 	import LoadingButton from '../LoadingButton'
@@ -59,7 +58,6 @@
 		name: 'ThreadNew',
 		components: {
 			InputEditorCore,
-			InputEditorPreview,
 			SelectButton,
 			FancyInput,
 			LoadingButton,

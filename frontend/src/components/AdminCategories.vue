@@ -4,7 +4,6 @@
 			<div slot='main'>
 				<p>Add a category</p>
 				<fancy-input v-model='add.name' placeholder='Category name'></fancy-input>
-				<colour-picker v-model='add.color'></colour-picker>
 			</div>
 			<div slot='footer'>
 				<button class='button button--modal button--green' @click='addCategory'>Add category</button>
@@ -74,8 +73,6 @@
 	import ModalWindow from './ModalWindow'
 	import FancyInput from './FancyInput'
 	import LoadingIcon from './LoadingIcon'
-	import ColourPicker from './ColourPicker'
-
 	import AjaxErrorHandler from '../assets/js/errorHandler'
 
 	export default {
@@ -83,8 +80,7 @@
 		components: {
 			ModalWindow,
 			FancyInput,
-			LoadingIcon,
-			ColourPicker
+			LoadingIcon
 		},
 		data () {
 			return {
