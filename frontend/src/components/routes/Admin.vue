@@ -34,19 +34,19 @@
 					{
 						title: 'Dashboard',
 						route: 'dashboard',
-						description: 'Quick links and stats about your forum',
+						description: ' ',
 						icon: 'fa-home' 
 					},
 					{
 						title: 'General',
 						route: 'general',
-						description: 'Admin accounts, categories and settings',
+						description: ' ',
 						icon: 'fa-th'
 					},
 					{
 						title: 'Users',
 						route: 'users',
-						description: 'View current user accounts',
+						description: ' ',
 						icon: 'fa-user-circle'
 					}
 				]

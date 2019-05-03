@@ -32,6 +32,7 @@
 				
 				@keydown.ctrl.66.prevent='replaceSelectedText("__", "__")'
 				@keydown.ctrl.73.prevent='replaceSelectedText("*", "*")'
+				@keydown.ctrl.76.prevent='setModalState("link", true)'
 			>
 			</textarea>
 		</div>

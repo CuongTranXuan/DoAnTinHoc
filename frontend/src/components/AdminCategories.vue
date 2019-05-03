@@ -27,7 +27,6 @@
 			<div class='category_widget__text'>
 				<div class='category_widget__text__title'>Categories</div>
 				Hover to remove or edit a category. <br/>
-				Removing a category will place any threads in that category into 'Other'
 			</div>
 
 			<transition-group name='slide'>
