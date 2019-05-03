@@ -1,45 +1,21 @@
 # frontend
 
-Vue 3.1.3
+> A Vue.js project
 
-Vue-CLI 3 project with vuex, routes and jest for unit test.
+## Build Setup
 
-
-## Project setup
-```
+``` bash
+# install dependencies
 npm install
-```
 
-or use docker to build and run project:
+# serve with hot reload at localhost:8080
+npm run dev
 
-```
-docker-compose up
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
+# build for production with minification
 npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
