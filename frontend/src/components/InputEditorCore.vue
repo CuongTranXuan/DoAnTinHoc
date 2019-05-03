@@ -15,8 +15,14 @@
 					class='input_editor_core__format_button'
 					title='Italic (ctrl + i)'
 					@click='replaceSelectedText("*", "*")'
+				>	I
+				</div>
+				<div
+					class='input_editor_core__format_button'
+					title='Link (ctrl + l)'
+					@click='setModalState("link", true)'
 				>
-					I
+					<span class='fa fa-link'></span>
 				</div>
 			</div>
 			<textarea

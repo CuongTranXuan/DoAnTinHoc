@@ -38,8 +38,6 @@
 	import InputEditorCore from './InputEditorCore'
 	import LoadingIcon from './LoadingIcon'
 	import TabView from './TabView'
-
-
 	export default {
 		name: 'InputEditor',
 		props: ['value', 'error', 'replyUsername', 'show', 'loading'],
