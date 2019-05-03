@@ -158,7 +158,6 @@
 		<transition name='fade'>
 			<router-view v-show='!$store.state.show404Page'></router-view>
 		</transition>
-		<footer></footer>
 	</div>
 </template>
 
