@@ -184,7 +184,7 @@
 			NotificationButton,
 			SearchBox,
 			NotFound,
-			Footer
+			'footer': Footer
 		},
 		data () {
 			return {

@@ -24,7 +24,7 @@
         </v-btn>
       </v-card-title>
 
-      <v-card-actions class="grey darken-3 justify-center">
+      <v-card-actions class="white darken-3 justify-center">
         &copy;2019 — <strong>Team5</strong>
       </v-card-actions>
     </v-card>
