@@ -158,6 +158,7 @@
 		<transition name='fade'>
 			<router-view v-show='!$store.state.show404Page'></router-view>
 		</transition>
+		<footer></footer>
 	</div>
 </template>
 
@@ -168,7 +169,7 @@
 	import LoadingButton from './components/LoadingButton'
 	import NotificationButton from './components/NotificationButton'
 	import SearchBox from './components/SearchBox'
-
+	import Footer from './components/Footer'
 	import NotFound from './components/routes/NotFound'
 	
 	import AjaxErrorHandler from './assets/js/errorHandler'
@@ -182,7 +183,8 @@
 			LoadingButton,
 			NotificationButton,
 			SearchBox,
-			NotFound
+			NotFound,
+			Footer
 		},
 		data () {
 			return {
