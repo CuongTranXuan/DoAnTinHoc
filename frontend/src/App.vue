@@ -154,13 +154,14 @@
 			<span class='fa fa-bars header__menu_button' @click='toggleMenu'></span>
 		</header>
 
-		<MyFooter></MyFooter>
 		
+
 		<not-found v-show='$store.state.show404Page'></not-found>
 		
 		<transition name='fade'>
 			<router-view v-show='!$store.state.show404Page'></router-view>
 		</transition>
+		<MyFooter></MyFooter>
 	</div>
 </template>
 
