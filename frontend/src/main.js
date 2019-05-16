@@ -27,9 +27,13 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 import linkExpander from './assets/js/linkExpander'
-
+import '../node_modules/vuetify/dist/vuetify.min.css'
 import App from './App'
 import store from './store/index'
+
+
+import Vuetify from 'vuetify' //using vuetify
+
 
 const Index = () => import('./components/routes/Index')
 const P = () => import('./components/routes/P')
@@ -59,6 +63,8 @@ Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(VueAxios, axios)
 Vue.use(linkExpander)
+Vue.use(Vuetify)
+
 
 const router = new VueRouter({
 	routes: [
