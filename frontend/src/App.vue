@@ -165,13 +165,13 @@
 		<footer class="footer">
 
   			<!-- Copyright -->
-  			<div class="footer__copyright text-center py-3">1 sản phẩm của Team5: 
+  			<div class="footer__copyright">1 sản phẩm của Team5: 
     		<a href="https://github.com/CuongTranXuan/DoAnTinHoc">  Github.com</a>
   			</div>
   			<!-- Copyright -->
 		</footer>
 		<!-- Footer -->
-	</div>
+	</div> 
 </template>
 
 <script>
@@ -498,6 +498,7 @@
 		align-items: center;
 		position: fixed;
 		bottom: 0;
+		height: 33px;
 	}
 	.footer__copyright {
 				text-align: center;
