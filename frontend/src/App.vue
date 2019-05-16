@@ -162,11 +162,11 @@
 			<router-view v-show='!$store.state.show404Page'></router-view>
 		</transition>
 		<!-- Footer -->
-		<footer class="page-footer">
+		<footer class="footer">
 
   			<!-- Copyright -->
-  			<div class="footer-copyright text-center py-3">1 sản phẩm của Team5:
-    		<a href="https://github.com/CuongTranXuan/DoAnTinHoc"> Github.com</a>
+  			<div class="footer__copyright text-center py-3">1 sản phẩm của Team5: 
+    		<a href="https://github.com/CuongTranXuan/DoAnTinHoc">  Github.com</a>
   			</div>
   			<!-- Copyright -->
 			</footer>
@@ -495,10 +495,17 @@
 			transition: all 0.4s;
 		}
 	}
-	.page-footer {
+	.footer {
 		background-color: rgba(7, 253, 212, 0.589);
-		align-items: center;
+		text-align: center;
 		position: fixed;
+		bottom: 0%;
+		@at-root #{&}__copyright{
+				text-align: center;
+				position: fixed;
+				transition: all 0.4s;
+				pointer-events: none;
+		}
 	}
 	.logo {
 		@include text($font--role-emphasis, 2rem, 600);
