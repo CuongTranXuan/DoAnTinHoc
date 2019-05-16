@@ -153,6 +153,9 @@
 			<div class='header__overlay' :class='{ "header__overlay--show": showMenu }' @click='toggleMenu'></div>
 			<span class='fa fa-bars header__menu_button' @click='toggleMenu'></span>
 		</header>
+
+		<MyFooter></MyFooter>
+		
 		<not-found v-show='$store.state.show404Page'></not-found>
 		
 		<transition name='fade'>
@@ -168,7 +171,7 @@
 	import LoadingButton from './components/LoadingButton'
 	import NotificationButton from './components/NotificationButton'
 	import SearchBox from './components/SearchBox'
-
+	import MyFooter from './components/MyFooter'
 	import NotFound from './components/routes/NotFound'
 	
 	import AjaxErrorHandler from './assets/js/errorHandler'
@@ -182,7 +185,8 @@
 			LoadingButton,
 			NotificationButton,
 			SearchBox,
-			NotFound
+			NotFound,
+			MyFooter
 		},
 		data () {
 			return {
@@ -449,7 +453,7 @@
 		justify-content: space-between;
 
 		border-bottom: 0.125rem solid $color__gray--primary;
-		background-color: #fff;
+		background-color: rgba(7, 253, 212, 0.589);
 
 		@at-root #{&}__group {
 			display: flex;
