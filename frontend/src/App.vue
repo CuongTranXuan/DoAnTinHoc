@@ -181,7 +181,6 @@
 	import LoadingButton from './components/LoadingButton'
 	import NotificationButton from './components/NotificationButton'
 	import SearchBox from './components/SearchBox'
-	import MyFooter from './components/MyFooter'
 	import NotFound from './components/routes/NotFound'
 	
 	import AjaxErrorHandler from './assets/js/errorHandler'
@@ -195,8 +194,7 @@
 			LoadingButton,
 			NotificationButton,
 			SearchBox,
-			NotFound,
-			MyFooter
+			NotFound
 		},
 		data () {
 			return {
@@ -500,10 +498,10 @@
 		align-items: center;
 		position: fixed;
 		bottom: 0;
-		@at-root #{&}__copyright{
+	}
+	.footer__copyright {
 				text-align: center;
 				position: fixed;
-		}
 	}
 	.logo {
 		@include text($font--role-emphasis, 2rem, 600);
