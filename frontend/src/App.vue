@@ -161,7 +161,16 @@
 		<transition name='fade'>
 			<router-view v-show='!$store.state.show404Page'></router-view>
 		</transition>
-		<MyFooter></MyFooter>
+		<!-- Footer -->
+		<footer class="page-footer">
+
+  			<!-- Copyright -->
+  			<div class="footer-copyright text-center py-3">1 sản phẩm của Team5:
+    		<a href="https://github.com/CuongTranXuan/DoAnTinHoc"> Github.com</a>
+  			</div>
+  			<!-- Copyright -->
+			</footer>
+		<!-- Footer -->
 	</div>
 </template>
 
@@ -486,7 +495,11 @@
 			transition: all 0.4s;
 		}
 	}
-
+	.page-footer {
+		background-color: rgba(7, 253, 212, 0.589);
+		align-items: center;
+		position: fixed;
+	}
 	.logo {
 		@include text($font--role-emphasis, 2rem, 600);
 		@include user-select(none);
