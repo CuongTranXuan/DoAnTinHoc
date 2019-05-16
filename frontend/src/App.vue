@@ -169,7 +169,7 @@
     		<a href="https://github.com/CuongTranXuan/DoAnTinHoc">  Github.com</a>
   			</div>
   			<!-- Copyright -->
-			</footer>
+		</footer>
 		<!-- Footer -->
 	</div>
 </template>
@@ -497,14 +497,12 @@
 	}
 	.footer {
 		background-color: rgba(7, 253, 212, 0.589);
-		text-align: center;
+		align-items: center;
 		position: fixed;
-		bottom: 0%;
+		bottom: 0;
 		@at-root #{&}__copyright{
 				text-align: center;
 				position: fixed;
-				transition: all 0.4s;
-				pointer-events: none;
 		}
 	}
 	.logo {
