@@ -19,7 +19,9 @@
 				<slot name='main'></slot>
 			</div>
 			<div class='modal_window__footer' v-if='!hideFooter'>
-				<slot name='footer'></slot>
+				<slot name='footer'>
+					<footer></footer>
+				</slot>
 			</div>
 		</div>
 	</div>
@@ -27,11 +29,11 @@
 
 <script>
 	import LoadingIcon from './LoadingIcon'
-
+	import Footer from './Footer'
 	export default {
 		name: 'ModalWindow',
 		props: ['value', 'width', 'close-button', 'hide-footer', 'no-padding', 'loading'],
-		components: { LoadingIcon },
+		components: { LoadingIcon, Footer },
 		methods: {
 			closeModal () {
 				this.$emit('input', false)

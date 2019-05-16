@@ -169,6 +169,7 @@ const actions = {
 			vue.axios
 				.get(URL)
 				.then(res => {
+					
 					let currentPostsIds = state.posts.map(p => p.id)
 					let filteredPosts =
 						res.data.Posts.filter(p => !currentPostsIds.includes(p.id))

@@ -52,7 +52,7 @@
 		}
 
 		@at-root #{&}__menu {
-			background-color: #fff;
+			background-color: rgb(7, 230, 44);
 			border: 1.5px solid $color__gray--darker;
 			border-radius: 0.25rem;
 			box-shadow: 0 0.25rem 1rem rgba(#000, 0.125);
@@ -107,7 +107,7 @@
 				}
 
 				@at-root #{&}__menu {
-					background-color: rgba(255, 255, 255, 0.97);
+					background-color: rgba(7, 230, 44, 0.97);
 					border-radius: 0.25rem 0.25rem 0 0;
 					font-size: 1.125rem;
 					opacity: 0;

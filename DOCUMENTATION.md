@@ -15,9 +15,6 @@ All sub-routes require admin privileges
     }
   ```
 
-## /ban
-All sub-routes require admin privileges
-
 ### /
 * Method: `POST`
 * Data params:
