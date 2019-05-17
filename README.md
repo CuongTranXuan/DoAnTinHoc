@@ -7,12 +7,12 @@ This is a project for Class 'Đồ án tin học: thiết kế xây dựng phầ
 # Members: 
 
 * Trần Xuân Cường - 20160589
-* Đoàn Ngọc Duy   - 
-* Trần Đăng Đôn	  - 
+* Đoàn Ngọc Duy   - 20160754
+* Trần Đăng Đôn	  - 20161018
 
 # Phone Wiki 
 
-[Click here](https://my-test-forum123.herokuapp.com/) for a link to the demo.
+[Click here](https://phonewiki.herokuapp.com/) for a link to the demo.
 
 ## Features
 * Mobile ready single-page application
